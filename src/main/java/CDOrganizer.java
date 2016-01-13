@@ -27,18 +27,22 @@ public class CDOrganizer {
     return catalog;
   }
 
-  public CDOrganizer find(String search) {
-    CDOrganizer result = catalog.get(1);
-    try {
-      for (CDOrganizer cd: catalog){
-        if (cd.getTitle().equals(search)){
-          result = cd;
-        } else {
-          result = catalog.get(99999);
-        }
+  public static ArrayList<String> artistsList() {
+    ArrayList<String> list = new ArrayList<String>();
+    for (CDOrganizer mArtist : catalog) {
+      if ( !list.contains(mArtist.getArtist()) ) {
+        list.add(mArtist.getArtist());
       }
-    } catch (IndexOutOfBoundsException ioobe) {
-      return null;
+    }
+    return list;
+  }
+
+  public static ArrayList<CDOrganizer> find(String search) {
+    ArrayList<CDOrganizer> result = new ArrayList<CDOrganizer>();
+    for (CDOrganizer cd: catalog){
+      if (cd.getTitle().equals(search) || cd.getArtist().equals(search)){
+        result.add(cd);
+      }
     }
     return result;
   }

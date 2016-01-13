@@ -29,11 +29,36 @@ public class CDOrganizerTest {
     assertTrue(CDOrganizer.catalog().contains(secondCd));
   }
 
+  // @Test
+  // public void cdOrganizer_returnsCDsByTitle_object() {
+  //   CDOrganizer firstCd = new CDOrganizer("First Artist", "First Title");
+  //   assertEquals(firstCd.getTitle(), firstCd.find("First Title").getTitle());
+  // }
+  //
+  // @Test
+  // public void cdOrganizer_returnsCDsByArtist_object() {
+  //   CDOrganizer firstCd = new CDOrganizer("First Artist", "First Title");
+  //   assertEquals(firstCd.getArtist(), firstCd.find("First Artist").getArtist());
+  // }
+
   @Test
-  public void cdOrganizer_returnsCDsByTitle_object() {
-    CDOrganizer firstCd = new CDOrganizer("First Artist", "First Title");
-    assertEquals(firstCd.getTitle(), firstCd.find("First Title").getTitle());
+  public void cdOrganizer_returnsListOfArtists_ArrayList(){
+    CDOrganizer firstCd = new CDOrganizer("First Artist", "White album");
+    CDOrganizer secondCD = new CDOrganizer("Second Artist", "Black album");
+    CDOrganizer thirdCd = new CDOrganizer("First Artist", "Blue album");
+    assertEquals(2, CDOrganizer.artistsList().size());
+
   }
+
+  @Test
+  public void cdOrganizer_returnsMultipleObjectsForSearch_ArrayList() {
+    CDOrganizer firstCd = new CDOrganizer("First Artist", "First Title");
+    CDOrganizer secondCd = new CDOrganizer("First Artist", "Second Title");
+    assertEquals(firstCd.getArtist(), CDOrganizer.find("First Artist").get(0).getArtist());
+    assertEquals(secondCd.getArtist(), CDOrganizer.find("First Artist").get(1).getArtist());
+  }
+
+
 
 
 }
