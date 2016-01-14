@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CDOrganizerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-01-13T23:35:40" hostname="epicodus-36.local" time="0.002">
+<testsuite name="CDOrganizerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-01-14T05:55:42" hostname="iliak--C660" time="0.006">
   <properties/>
-  <testcase name="cdOrganizer_emptiesAllObjectsFromArrayList" classname="CDOrganizerTest" time="0.001"/>
+  <testcase name="cdOrganizer_emptiesAllObjectsFromArrayList" classname="CDOrganizerTest" time="0.002"/>
   <testcase name="cdOrganizer_returnAllInstancesOfCds_true" classname="CDOrganizerTest" time="0.0"/>
   <testcase name="cdOrganizer_returnsListOfArtists_ArrayList" classname="CDOrganizerTest" time="0.0"/>
   <testcase name="cdOrganizer_ReturnTitle_Title" classname="CDOrganizerTest" time="0.0"/>

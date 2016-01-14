@@ -39,7 +39,9 @@ public class App {
     post("/catalog", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
+      CDOrganizer cdOrganizer = new CDOrganizer(request.queryParams("artist"), request.queryParams("title"));
 
+      model.put("newCD", cdOrganizer);
 
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
