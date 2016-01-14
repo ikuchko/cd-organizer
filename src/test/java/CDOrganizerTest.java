@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 
 public class CDOrganizerTest {
 
+  @Rule
+  public ClearRule clearRule = new ClearRule();
+
   @Test
   public void cdOrganizer_instantiatesCorrectly_true(){
     CDOrganizer cdOrganizer = new CDOrganizer("Some Artist", "Some title");
@@ -56,6 +59,13 @@ public class CDOrganizerTest {
     CDOrganizer secondCd = new CDOrganizer("First Artist", "Second Title");
     assertEquals(firstCd.getArtist(), CDOrganizer.find("First Artist").get(0).getArtist());
     assertEquals(secondCd.getArtist(), CDOrganizer.find("First Artist").get(1).getArtist());
+  }
+
+  @Test
+  public void cdOrganizer_emptiesAllObjectsFromArrayList() {
+    CDOrganizer cdOrganizer = new CDOrganizer("First Artist", "First Title");
+    CDOrganizer.clear();
+    assertEquals(CDOrganizer.find("First Artist").size(), 0);
   }
 
 

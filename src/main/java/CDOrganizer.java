@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class CDOrganizer {
 
-  // declare member variables here
   private String mArtist;
   private String mTitle;
   private static ArrayList<CDOrganizer> catalog = new ArrayList<CDOrganizer>();
@@ -45,6 +44,10 @@ public class CDOrganizer {
       }
     }
     return result;
+  }
+
+  public static void clear() {
+    catalog.clear();
   }
 
 }
